@@ -1,0 +1,487 @@
+:root {
+    --DarkText: hsl(229, 25%, 31%);
+    --ScoreText: hsl(229, 64%, 46%);
+    --HeaderOutline: hsl(217, 16%, 45%);
+}
+
+body, html  {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 25%;
+    height: 100vh;
+    background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    align-items: center;
+    z-index: 1000;
+}
+
+.rulesCortain {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .5;
+    z-index: 9000;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+}
+
+.rulesCortainShown {
+    visibility: visible;
+    opacity: .5;
+}
+
+.rulesBox {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 350px;
+    height: 350px;
+    padding: 20px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10000;
+    transition: all .2s ease-in-out;
+}
+
+.rulesBoxShown {
+    visibility: visible;
+    opacity: 1;
+}
+
+.rulesBox__header {
+    display: flex;
+    align-items: center;
+}
+
+.rulesBox__header p{
+    font-size: 24px;
+}
+
+.rulesBox__header img {
+    margin-left: auto;
+}
+
+.rulesBox__header img:hover {
+    cursor: pointer;
+}
+
+.rulesBox__body {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.score {
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    padding: 15px;
+    align-items: center;
+    border-radius: 10px;
+    border: 4px solid var(--HeaderOutline);
+}
+
+.score h1 {
+    margin: 0;
+    line-height: 1;
+    color: white;
+}
+
+.score-points {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    height: 100%;
+    padding: 5px 30px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.score-points-head {
+    font-size: 20px;
+    color: var(--DarkText);
+}
+
+.score-points-real {
+    font-size: 58px;
+    color: var(--DarkText);
+}
+
+.main {
+    position: relative;
+    margin-top: 60px;
+    width: 100%;
+    height: 300px;
+    transition: all .2s ease-in-out;
+}
+
+.main__triangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/src/assets/bg-triangle.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /**/
+    opacity: 1;
+}
+
+.main__triangle-paper-bg-border {
+    position: absolute;
+    top: -30px;
+    left: 80px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: hsl(230, 89%, 62%);
+}
+
+.main__triangle-paper-border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translateY(-3%);
+    background-color:  hsl(230, 89%, 65%);
+}
+
+.main__triangle-paper-front-bg {
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background-color: lightgray;
+}
+
+.main__triangle-paper-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: white;
+    transform: translateY(3%);
+}
+
+.main__triangle-scissors-bg-border {
+    position: absolute;
+    top: -30px;
+    right: 80px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: hsl(39, 89%, 49%);
+}
+
+.main__triangle-scissors-border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translateY(-3%);
+    background-color: hsl(40, 84%, 53%);
+}
+
+.main__triangle-scissors-front-bg {
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background-color: lightgray;
+}
+
+.main__triangle-scissors-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: white;
+    transform: translateY(3%);
+}
+
+.main__triangle-rock-bg-border {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: hsl(349, 71%, 52%);
+}
+
+.main__triangle-rock-border {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translateY(-3%);
+    background-color: hsl(349, 70%, 56%);
+}
+
+.main__triangle-rock-front-bg {
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background-color: lightgray;
+}
+
+.main__triangle-rock-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: white;
+    transform: translateY(3%);
+}
+
+.main__triangle img {
+    transition: transform .2s ease-in-out;
+}
+
+/* Step 1 */
+.main__step1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    }
+
+.main__step1-choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__step1-choice p{
+    font-size: 20px;
+    color: white;
+}
+
+.main__step1-choice-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: hsl(237, 49%, 15%);
+    margin-top: auto;
+}
+
+.main__step1-choice-container .main__triangle-paper-bg-border {
+    width: 100%;
+    height: 100%;
+    position: static;
+}
+
+.main__step1-choice-container .main__triangle-scissors-bg-border {
+    width: 100%;
+    height: 100%;
+    position: static;
+}
+
+.main__step1-choice-container .main__triangle-rock-bg-border {
+    width: 100%;
+    height: 100%;
+    position: static;
+}
+
+.main__step1-status {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s ease-in;
+}
+
+.main__step1-status-text {
+    font-size: 24px;
+    color: white;
+}
+
+.main__step1-status-button {
+    padding: 10px 30px;
+    font-size: 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    color: darkred;
+    transition: color .2s ease-in-out;
+}
+
+.rules {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    padding: 10px 30px;
+    background-color: transparent;
+    font-size: 18px;
+    color: white;
+    border-radius: 10px;
+    border: 4px solid var(--HeaderOutline);
+    transition: all .2s ease-in-out;
+}
+
+.rules:hover {
+    background-color: hsl(215, 16%, 26%);
+    cursor: pointer;
+}
+
+.hideDiv{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.main__triangle .main__triangle-paper-border:hover img {
+    transform: rotate(45deg);
+}
+
+.main__triangle .main__triangle-rock-border:hover img {
+    transform: rotate(45deg);
+}
+
+.main__triangle .main__triangle-scissors-border:hover img {
+    transform: rotate(45deg);
+}
+
+.main__triangle .main__triangle-paper-border:hover {
+    cursor: pointer;
+}
+
+.main__triangle .main__triangle-rock-border:hover {
+    cursor: pointer;
+}
+
+.main__triangle .main__triangle-scissors-border:hover {
+    cursor: pointer;
+}
+
+.main__step1-status-button:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.main__step1-status-button:focus{
+    outline: none;
+}
+
+.statusActive {
+    visibility: visible;
+    opacity: 1;
+    position: static;
+}
+
+@media only screen and (max-width: 800px){
+    body {
+        padding: 0px 10%;
+    }
+
+    .rulesBox {
+        width: auto;
+        height: auto;
+        padding: 5%;
+        border-radius: 0;
+        justify-content: center;
+    }
+
+    .main__triangle-paper-bg-border {
+        position: absolute;
+        top: -30px;
+        left: -10%;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: hsl(230, 89%, 62%);
+    }
+
+    .main__triangle-scissors-bg-border {
+        position: absolute;
+        top: -30px;
+        right: -10%;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: hsl(39, 89%, 49%);
+    }
+
+    .main__triangle-rock-bg-border {
+        width: 130px;
+        height: 130px;
+    }
+
+    .main__step1 {
+        flex-wrap: wrap;
+    }
+
+    .main__step1-choice {
+        height: 100%;
+    }
+
+    .main__step1-choice-container {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-color: hsl(237, 49%, 15%);
+        margin: auto;
+    }
+
+    .main__step1-status {
+        height: 100%;
+        order: 3;
+        position: static;
+        height: auto;
+        margin: 0;
+    }
+
+    .rules {
+        position: static;
+        margin-top: 140px;
+        margin-bottom: 40px;
+    }
+})

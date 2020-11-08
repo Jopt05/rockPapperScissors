@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/assets/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/styles.css">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+<body>
+  <div class="rulesCortain"></div>
+  <div class="rulesBox">
+    <div class="rulesBox__header">
+      <p>RULES</p>
+      <img class="rulesBox__header-close" src="/src/assets/icon-close.svg" alt="">
+    </div>
+    <img class="rulesBox__body" src="/src/assets/image-rules.svg" alt="">
+  </div>
+  <div class="score">
+    <h1>ROCK<br>
+    PAPER<br>
+    SCISSORS</h1>
+    <div class="score-points">
+      <p class="score-points-head">SCORE</p>
+      <p class="score-points-real">0</p>
+    </div>
+  </div>
+  <div class="main">
+    <div class="main__triangle">
+      <div class="main__triangle-paper-bg-border">
+        <div class="main__triangle-paper-border">
+          <div class="main__triangle-paper-front-bg">
+            <div class="main__triangle-paper-front">
+              <img class="paper" src="/src/assets/icon-paper.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__triangle-scissors-bg-border">
+        <div class="main__triangle-scissors-border">
+          <div class="main__triangle-scissors-front-bg">
+            <div class="main__triangle-scissors-front">
+              <img class="scissors" src="/src/assets/icon-scissors.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main__triangle-rock-bg-border">
+        <div class="main__triangle-rock-border">
+          <div class="main__triangle-rock-front-bg">
+            <div class="main__triangle-rock-front">
+              <img class="rock" src="/src/assets/icon-rock.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main__step1 hideDiv">
+      <div class="main__step1-choice">
+        <p>YOU PICKED</p>
+        <div class="main__step1-choice-container">
+          
+        </div>
+      </div>
+      <div class="main__step1-status">
+        <p class="main__step1-status-text">YOU LOSE</p>
+        <button class="main__step1-status-button">PLAY AGAIN</button>
+      </div>
+      <div class="main__step1-choice">
+        <p>THE HOUSE PICKED</p>
+        <div class="main__step1-choice-container">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main2">
+    
+  </div>
+  <button class="rules">RULES</button>
+
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>. -->
+  </div>
+
+  <script src="/src/js/main.js"></script>
+</body>
+</html>
